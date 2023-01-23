@@ -1,9 +1,9 @@
-﻿using DisprzTraining.Models;
+﻿// using DisprzTraining.Models;
 
-namespace DisprzTraining.Business
-{
-    public interface IHelloWorldBL
-    {
-        Task<HelloWorld> SayHelloWorld();
-    }
-}
+// namespace DisprzTraining.Business
+// {
+//     public interface IHelloWorldBL
+//     {
+//         Task<HelloWorld> SayHelloWorld();
+//     }
+// }

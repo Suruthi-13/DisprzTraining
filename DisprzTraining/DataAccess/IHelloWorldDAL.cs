@@ -1,9 +1,9 @@
-﻿using DisprzTraining.Models;
+﻿// using DisprzTraining.Models;
 
-namespace DisprzTraining.DataAccess
-{
-    public interface IHelloWorldDAL
-    {
-        Task<HelloWorld> GetHelloWorldMessage();
-    }
-}
+// namespace DisprzTraining.DataAccess
+// {
+//     public interface IHelloWorldDAL
+//     {
+//         Task<HelloWorld> GetHelloWorldMessage();
+//     }
+// }

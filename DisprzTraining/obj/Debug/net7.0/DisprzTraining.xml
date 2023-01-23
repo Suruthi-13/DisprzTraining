@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DisprzTraining</name>
+    </assembly>
+    <members>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetAppointmentByDate(System.DateTime)">
+            <summary>
+            Get Appointment By Date
+            </summary>
+             <param name="date"></param>
+            <response code="200">Returns appointments in the searched date</response>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.AddNewAppointment(DisprzTraining.Models.Appointment)">
+            <summary>
+            Add new Appointment
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST v1/meetings
+                {        
+                   "appointmentID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                   "eventTitle": "Catch Up",
+                   "appointmentDateStartTime": "2023-01-20T06:40:48.590Z",
+                   "appointmentDateEndTime": "2023-01-20T06:40:48.590Z",
+                   "description": "Meet with mentor"
+                }
+            </remarks>
+            <response code="201">Returns the newly created appointment</response>
+            <response code="409">If the appointment time is conflict with other appointments</response>  
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.DeleteAppointmentById(System.Guid)">
+             <summary>
+             Delete Appointment By AppointmentID
+             </summary>
+            <param name="meetingId"></param>
+             <response code="204">The appointment will be deleted</response>
+             <response code="404">If the Id is not present</response>   
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.UpdateAppointment(DisprzTraining.Models.Appointment,System.Guid)">
+            <summary>
+            Update an appointment
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT v1/meetings
+                {        
+                   "appointmentID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                   "eventTitle": "Catch Up",
+                   "appointmentDateStartTime": "2023-01-20T06:40:48.590Z",
+                   "appointmentDateEndTime": "2023-01-20T06:40:48.590Z",
+                   "description": "Meet with mentor"
+                }
+            </remarks>
+            <response code="204">Returns the updated appointment</response>
+            <response code="409">If the updated appointment time is conflict with other appointments</response>  
+            <response code="400">If the appoinment time interval is Invalid</response> 
+            <param name="meetingId"></param>
+        </member>
+        <member name="M:DisprzTraining.Controllers.AppointmentsController.GetAllAppointments(System.Int32,System.Int32,System.Nullable{System.DateTime},System.String)">
+            <summary>
+             Get All appointments using pagination concept
+            </summary>
+             <response code="200">Returns the List of appointments</response>  
+        </member>
+    </members>
+</doc>
