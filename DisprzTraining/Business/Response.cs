@@ -27,13 +27,13 @@ namespace DisprzTraining.Business
     public  class ConflictResponse
     {
         public  string LanguageCode{get;set;}="en";
-        public string ErrorMessage{get;set;}="Conflict occurs.Meeting was already excisted in that timing";
-        public  string ErrorCode{get;set;}="DZ_409";
+        public string ErrorMessage{get;set;}="Meeting was already excisted in that timing";
+        public  string ErrorCode{get;set;}="DZ_4091";
     }
     public class updatedConflictResponse
     {
        public  string LanguageCode{get;set;}="en";
-        public string ErrorMessage{get;set;}="Conflict occurs,Meeting was already excisted in that timing";
-        public  string ErrorCode{get;set;}="DZ_409"; 
+        public string ErrorMessage{get;set;}="Meeting was already excisted in that timing";
+        public  string ErrorCode{get;set;}="DZ_4092"; 
     }
 }

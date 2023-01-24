@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
+    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {}
   },
   "projects": {
-    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
+    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "projectUniqueName": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
         "projectName": "DisprzTraining.Tests",
-        "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
+        "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining.Tests\\DisprzTraining.Tests.csproj",
         "packagesPath": "C:\\Users\\suruthi.s_disprz\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining.Tests\\obj\\",
+        "outputPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\suruthi.s_disprz\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\DisprzTraining.csproj": {
-                "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\DisprzTraining.csproj"
+              "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
+                "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj"
               }
             }
           }
@@ -45,6 +45,10 @@
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.8.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[7.0.2, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -91,14 +95,14 @@
         }
       }
     },
-    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\DisprzTraining.csproj": {
+    "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\DisprzTraining.csproj",
+        "projectUniqueName": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
         "projectName": "DisprzTraining",
-        "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\DisprzTraining.csproj",
+        "projectPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\DisprzTraining.csproj",
         "packagesPath": "C:\\Users\\suruthi.s_disprz\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining-master\\DisprzTraining\\obj\\",
+        "outputPath": "c:\\Users\\suruthi.s_disprz\\Desktop\\DisprzTraining\\DisprzTraining\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\suruthi.s_disprz\\AppData\\Roaming\\NuGet\\NuGet.Config"

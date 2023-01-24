@@ -27,7 +27,7 @@ namespace DisprzTraining.DisprzTraining.Business
         public async Task<List<Appointment>> GetAppointmentByDate(DateTime date)
         {
             _appointmentList=  _appointmentDAL.GetAllAppointmentsDAL();
-            var result=_appointmentList.Where(s=>s.AppointmentDateStartTime.Date ==date.Date).ToList();
+            var result=_appointmentList.Where(s=>s.AppointmentDateStartTime.Date ==date.Date).OrderBy(s=>s.AppointmentDateStartTime).ToList();
             return result;
         }
          public async Task<Appointment> AddNewAppointment(Appointment appointment)
@@ -47,7 +47,7 @@ namespace DisprzTraining.DisprzTraining.Business
         public async Task<paginatedResponse> GetAllAppointments(int offset, int fetchCount, DateTime? date, string? searchAppointments)
         {
             _appointmentList =  _appointmentDAL.GetAllAppointmentsDAL();
-            var result=_appointmentList.Where(s=>(date == null || s.AppointmentDateStartTime.Date==date )&&((searchAppointments== null) || (s.EventTitle.ToLower().Contains(searchAppointments.ToLower())||s.Description.ToLower().Contains(searchAppointments.ToLower()))));
+            var result=_appointmentList.Where(s=>(date == null || s.AppointmentDateStartTime.Date==date )&&((searchAppointments== null) || (s.EventTitle.ToLower().Contains(searchAppointments.ToLower())||s.Description.ToLower().Contains(searchAppointments.ToLower())))).OrderBy(s=>s.AppointmentDateStartTime);
              obj.isTruncated = result.Count()<=fetchCount ? false : true; 
              obj.results=result.Skip(offset).Take(fetchCount).ToList<Appointment>();
              return(obj);
@@ -59,6 +59,7 @@ namespace DisprzTraining.DisprzTraining.Business
             if (result != null)
             {
                 _appointmentList.Remove(result);
+                //   _appointmentDAL.UpdateAppointmentListDAL(_appointmentList);
                 return await Task.FromResult(true);
             }
             return false;

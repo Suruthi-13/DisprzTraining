@@ -17,6 +17,9 @@ namespace DisprzTraining.Tests
 
 public class MeetingServiceTest
 {
+          static IAppointmentDAL appointmentDAL= new AppointmentDAL();
+          static IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+          static  AppointmentsController _appointment= new(appointmentBL);
   Appointment appointment= new Appointment()
   {
     AppointmentID= Guid.NewGuid(),
@@ -133,9 +136,9 @@ public class MeetingServiceTest
    [Fact]
   public async Task AddNewAppointment_Returns_201_Created()
   {
-            IAppointmentDAL appointmentDAL= new AppointmentDAL();
-            IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-            AppointmentsController _appointment= new(appointmentBL);
+            // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+            // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+            // AppointmentsController _appointment= new(appointmentBL);
           var result= await _appointment.AddNewAppointment(appointment) as CreatedResult;
           Assert.IsType<CreatedResult>(result);
           Assert.Equal(result?.StatusCode,201);
@@ -143,9 +146,9 @@ public class MeetingServiceTest
   [Fact]
   public async Task AddNewAppointment_Returns_409_Conflicts_400_BadRequest()
   {
-            IAppointmentDAL appointmentDAL= new AppointmentDAL();
-            IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-            AppointmentsController _appointment= new(appointmentBL);
+            // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+            // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+            // AppointmentsController _appointment= new(appointmentBL);
             //  var result_For_Past_Date= await _appointment.AddNewAppointment(appointmentForPast) as BadRequestObjectResult;
             //  var result_For_current_Date_Past_time= await _appointment.AddNewAppointment(appointmentCurrentDatePastTime) as BadRequestObjectResult;
              var result_For_Invalid_Time= await _appointment.AddNewAppointment(appointmentInvalidTime) as BadRequestObjectResult;
@@ -170,9 +173,9 @@ public class MeetingServiceTest
   public async Task GetAppointmentByDate_Returns_200_Sucess()
   {
     var testid=  new Guid("1784ae43-8e4f-48ed-82f0-b0b31c2f971a");
-            IAppointmentDAL appointmentDAL= new AppointmentDAL();
-            IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-            AppointmentsController _appointment= new(appointmentBL);
+            // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+            // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+            // AppointmentsController _appointment= new(appointmentBL);
           var result= await _appointment.GetAppointmentByDate(new DateTime(2024,01,18,10,30,0,0)) as OkObjectResult;
           Assert.Equal(result?.StatusCode,200);
           var appointments=Assert.IsType<List<Appointment>>(result.Value);
@@ -182,9 +185,9 @@ public class MeetingServiceTest
   [Fact]
   public async Task GetAppointmentByDate_For_Date_Having_No_Appointment_Returns_200_Sucess()
   {
-            IAppointmentDAL appointmentDAL= new AppointmentDAL();
-            IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-            AppointmentsController _appointment= new(appointmentBL);
+            // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+            // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+            // AppointmentsController _appointment= new(appointmentBL);
           var result= await _appointment.GetAppointmentByDate(new DateTime(2023,04,08,10,30,0,0)) as OkObjectResult;
           Assert.Equal(result?.StatusCode,200);
           var events=Assert.IsType<List<Appointment>>(result.Value);
@@ -213,9 +216,9 @@ public class MeetingServiceTest
     [Fact]
   public async Task DeleteAppointmentByID_return_201_NoContent()
   {
-        IAppointmentDAL appointmentDAL= new AppointmentDAL();
-        IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-        AppointmentsController _appointment= new(appointmentBL);
+        // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+        // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+        // AppointmentsController _appointment= new(appointmentBL);
         var result = await _appointment.DeleteAppointmentById( new Guid("3457a0fa-8406-4282-bbbc-132eee6637f7")) as NoContentResult;
         Assert.IsType<NoContentResult>(result);
         Assert.Equal(result.StatusCode,204);
@@ -223,9 +226,9 @@ public class MeetingServiceTest
   [Fact]
   public async Task DeleteAppointmentByID_return_404_NotFound()
   {
-        IAppointmentDAL appointmentDAL= new AppointmentDAL();
-        IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-        AppointmentsController _appointment= new(appointmentBL);
+        // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+        // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+        // AppointmentsController _appointment= new(appointmentBL);
         var result = await _appointment.DeleteAppointmentById(Guid.NewGuid()) as NotFoundObjectResult;
         Assert.IsType<NotFoundObjectResult>(result);
         Assert.Equal(result?.StatusCode,404);
@@ -234,9 +237,9 @@ public class MeetingServiceTest
   public async Task UpdateAppointment_return_204_Nocontent()
   {
     var id =  new Guid("1784ae43-8e4f-48ed-82f0-b0b31c2f971a");
-        IAppointmentDAL appointmentDAL= new AppointmentDAL();
-        IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-        AppointmentsController _appointment= new(appointmentBL);
+        // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+        // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+        // AppointmentsController _appointment= new(appointmentBL);
         var result = await _appointment.UpdateAppointment(appointmentforUpdate,id) as NoContentResult;
         var BadrequestResult= await _appointment.UpdateAppointment(appointmentInvalidtimeUpdate,id) as BadRequestObjectResult;
         var newresult= await _appointment.UpdateAppointment(appointmentforTimeUpdate,id) as NoContentResult;
@@ -257,9 +260,9 @@ public class MeetingServiceTest
   public async Task UpdateAppointment_conflict_Time_return_409_Conflict()
   {
     var id =  new Guid("1784ae43-8e4f-48ed-82f0-b0b31c2f971a");
-        IAppointmentDAL appointmentDAL= new AppointmentDAL();
-        IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-        AppointmentsController _appointment= new(appointmentBL);
+        // IAppointmentDAL appointmentDAL= new AppointmentDAL();
+        // IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+        // AppointmentsController _appointment= new(appointmentBL);
         var result = await _appointment.UpdateAppointment(appointmentforConflictUpdate,id) as ConflictObjectResult;
         Assert.IsType<ConflictObjectResult>(result);
         Assert.Equal(result.StatusCode,409);
@@ -268,9 +271,9 @@ public class MeetingServiceTest
   public async Task GetAllAppointmentPagination_returns_200_OkResult()
   {
     
-       IAppointmentDAL appointmentDAL= new AppointmentDAL();
-        IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
-        AppointmentsController _appointment= new(appointmentBL);
+      //  IAppointmentDAL appointmentDAL= new AppointmentDAL();
+      //   IAppointmentBL appointmentBL = new AppointmentBL(appointmentDAL);
+        // AppointmentsController _appointment= new(appointmentBL);
         var result= await _appointment.GetAllAppointments(0,10,new DateTime(2023,01,08,10,30,0,0)," ") as OkObjectResult;
         var Emptyresult= await _appointment.GetAllAppointments(0,10,new DateTime(2025,01,08,10,30,0,0)," ") as OkObjectResult;
         var emptynewresult= await _appointment.GetAllAppointments(0,10,null,"") as OkObjectResult;

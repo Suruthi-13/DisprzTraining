@@ -992,3 +992,5 @@ c:\Users\suruthi.s_disprz\Desktop\DisprzTraining-master\DisprzTraining\obj\Debug
 c:\Users\suruthi.s_disprz\Desktop\DisprzTraining-master\DisprzTraining\obj\Debug\net7.0\ref\DisprzTraining.dll
 C:\Users\suruthi.s_disprz\Desktop\DisprzTraining-master\DisprzTraining\bin\Debug\net7.0\DisprzTraining.xml
 C:\Users\suruthi.s_disprz\Desktop\DisprzTraining-master\DisprzTraining\obj\Debug\net7.0\DisprzTraining.xml
+c:\Users\suruthi.s_disprz\Desktop\DisprzTraining\DisprzTraining\bin\Debug\net7.0\DisprzTraining.xml
+c:\Users\suruthi.s_disprz\Desktop\DisprzTraining\DisprzTraining\obj\Debug\net7.0\DisprzTraining.xml
